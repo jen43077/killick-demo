@@ -10,7 +10,7 @@ const Banner = ({ appName }) => {
         <div className="banner">
             <div className="container">
                 <h1 className="logo-font">{appName.toLowerCase()}</h1>
-                <p>A place to float your knowledge</p>
+                <p>A place to sunk your knowledge</p>
             </div>
         </div>
     );
