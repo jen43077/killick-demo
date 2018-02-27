@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Home from "./Home";
-import './App.css';
+
 
 const mapStateToProps = state => ({
   appName: state.appName
