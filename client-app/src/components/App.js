@@ -1,11 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+
 import Home from "./Home";
-
-
-const mapStateToProps = state => ({
-  appName: state.appName
-});
 
 class App extends Component {
   render() {
@@ -13,4 +9,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default App;
