@@ -29,6 +29,7 @@ router.post("/users/login", function (req, res, next) {
     })(req, res, next);
 });
 
+//User Sign up
 router.post("/users", function (req, res, next) {
     var user = new User(); //---> create a new instance of our User model. Remember the `new` keyword?
 
@@ -43,6 +44,5 @@ router.post("/users", function (req, res, next) {
         })
         .catch(next);
 });
-
 
 module.exports = router;
