@@ -8,7 +8,6 @@ import services from "../../services";
 const mapStateToProps = state => ({
     appName: state.common.appName,
     articles: state.home.articles
-
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -19,6 +18,7 @@ class Home extends Component {
     componentDidMount() {
         this.props.onLoad(services.Articles.all());
     }
+
     render() {
         return (
             <div className="home-page">
