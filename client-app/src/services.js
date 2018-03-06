@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_ROOT = "/api";
 
-let token = null;
+
 const axiosInstance = axios.create({
     baseURL: "/api",
     timeout: 1000,
