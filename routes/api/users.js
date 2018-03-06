@@ -1,8 +1,23 @@
-///example of creating multiple variables at once.
+//example of creating multiple variables at once.
 const mongoose = require("mongoose"),
     router = require("express").Router(),
     passport = require("passport"),
     User = mongoose.model("User");
+var auth = require("../auth");
+
+//User return user info,
+//Protected Route, notice the call to auth.required before the function!!
+router.get("/user", auth.required, function (req, res, next) {
+    User.findById(req.payload.id)
+        .then(function (user) {
+            if (!user) {
+                return res.sendStatus(401);
+            }
+
+            return res.json({ user: user.toAuthJSON() });
+        })
+        .catch(next);
+});
 
 //User Login
 router.post("/users/login", function (req, res, next) {

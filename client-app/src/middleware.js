@@ -35,3 +35,4 @@ function isPromise(v) {
 }
 
 export { localStorageMiddleware, promiseMiddleware };
+
