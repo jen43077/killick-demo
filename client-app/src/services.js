@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
     baseURL: "/api",
-    timeout: 1000,
+    timeout: 5000,
     headers: {
         "Content-Type": "application/json"
     }
@@ -20,7 +20,12 @@ const requests = {
 };
 
 const Articles = {
-    all: page => requests.get(`/articles?limit=10`)
+    all: page => requests.get(`/articles?limit=10`),
+    get: slug => requests.get(`/articles/${slug}`)
+};
+
+const Comments = {
+    forArticle: slug => requests.get(`/articles/${slug}/comments`)
 };
 
 const Auth = {
@@ -34,6 +39,6 @@ const Auth = {
 export default {
     Articles,
     Auth,
+    Comments,
     setToken
 };
-
